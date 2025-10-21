@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    unsigned int a, b;
+
+    printf("Podaj dwie liczby calkowite: ");
+    scanf("%u %u", &a, &b);
+
+    // Iloczyn bitowy bez użycia operatora &
+    unsigned int iloczyn_bitowy = ~(~a | ~b);
+
+    // Suma bitowa bez użycia operatora |
+    unsigned int suma_bitowa = ~(~a & ~b);
+
+    printf("\nWyniki:\n");
+    printf("Iloczyn bitowy (a & b) bez &: %u (0x%X)\n", iloczyn_bitowy, iloczyn_bitowy);
+    printf("Suma bitowa (a | b) bez |: %u (0x%X)\n", suma_bitowa, suma_bitowa);
+
+    return 0;
