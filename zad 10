@@ -1,8 +1,198 @@
 #include <stdio.h>
-
+#include <math.h>
+#include <string.h>
 int main()
 {
 
+/* ZAD 11
+int zawieraAbba(char *ciag) {
+    for(int i = 0; i < 7; i++) {
+        if(ciag[i]=='a' && ciag[i+1]=='b' && ciag[i+2]=='b' && ciag[i+3]=='a')
+            return 1;
+    }
+    return 0;
+}
 
+int main() {
+    char ciag[11];
+    printf("Podaj 10 znaków (a lub b):\n");
+    for(int i = 0; i < 10; i++) {
+        printf("Znak %d: ", i+1);
+        scanf(" %c", &ciag[i]);
+    }
+    ciag[10] = '\0';
+    
+    if(zawieraAbba(ciag))
+        printf("W ciągu występuje sekwencja 'abba'.\n");
+    else
+        printf("Nie ma sekwencji 'abba'.\n");
+    return 0;
+}
+*/
+/* ZAD 10
+
+int reszta(int a, int b) {
+    while(a >= b) {
+        a -= b;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+    printf("Podaj dwie liczby naturalne: ");
+    scanf("%d %d", &a, &b);
+    if(a > 0 && b > 0)
+        printf("Reszta z dzielenia %d przez %d = %d\n", a, b, reszta(a, b));
+    else
+        printf("Obie liczby muszą być dodatnie!\n");
+    return 0;
+}
+*/
+
+
+/* Zad 9
+double pierwiastek(double liczba, double dokladnosc) {
+    double x = liczba; // początkowe przybliżenie
+    while(x*x - liczba > dokladnosc || liczba - x*x > dokladnosc) {
+        x = 0.5 * (x + liczba / x); // metoda Newtona
+    }
+    return x;
+}
+
+int main() {
+    double n, eps;
+    printf("Podaj liczbę i dokładność: ");
+    scanf("%lf %lf", &n, &eps);
+    if(n > 0 && eps > 0)
+        printf("Pierwiastek kwadratowy = %.10lf\n", pierwiastek(n, eps));
+    else
+        printf("Błędne dane!\n");
+    return 0;
+}
+*/
+
+
+
+/* ZAD 8
+
+double obliczPi(int n) {
+    double pi = 0.0;
+    for(int i = 0; i < n; i++) {
+        pi += (i % 2 == 0 ? 1.0 : -1.0) / (2*i + 1);
+    }
+    return 4 * pi;
+}
+
+int main() {
+    int n;
+    printf("Podaj dokładność (liczbę iteracji): ");
+    scanf("%d", &n);
+    printf("Przybliżenie pi = %.10lf\n", obliczPi(n));
+    return 0;
+}
+*/
+/* ZAD 7
+double poleOstroslupa(double a, double h) {
+    double hsc = sqrt(h*h + (a*a)/4); // wysokość ściany bocznej
+    return a*a + 2*a*hsc;
+}
+
+int main() {
+    double a, h;
+    printf("Podaj bok podstawy i wysokość ostrosłupa: ");
+    scanf("%lf %lf", &a, &h);
+    printf("Pole powierzchni ostrosłupa: %.2lf\n", poleOstroslupa(a, h));
+    return 0;
+}
+
+*/
+/*ZAD 6
+
+double poleProstopadloscianu(double a, double b, double c) {
+    return 2 * (a*b + a*c + b*c);
+}
+
+int main() {
+    double a, b, c;
+    printf("Podaj wymiary prostopadłościanu (a, b, c): ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    printf("Pole powierzchni: %.2lf\n", poleProstopadloscianu(a, b, c));
+    return 0;
+}
+*/
+
+/* ZAD 5
+double sumaArytmetycznego(int n, double a1, double r) {
+    return (n / 2.0) * (2 * a1 + (n - 1) * r);
+}
+
+double sumaGeometrycznego(int n, double a1, double q) {
+    if(q == 1) return a1 * n;
+    return a1 * (1 - pow(q, n)) / (1 - q);
+}
+
+int main() {
+    int wybor, n;
+    double a1, r;
+    printf("Wybierz:\n1 - ciag arytmetyczny\n2 - ciag geometryczny\n");
+    scanf("%d", &wybor);
+    printf("Podaj a1 i r (różnicę lub iloraz) oraz liczbę wyrazów n: ");
+    scanf("%lf %lf %d", &a1, &r, &n);
+
+    if(wybor == 1)
+        printf("Suma ciągu arytmetycznego = %.2lf\n", sumaArytmetycznego(n, a1, r));
+    else if(wybor == 2)
+        printf("Suma ciągu geometrycznego = %.2lf\n", sumaGeometrycznego(n, a1, r));
+    else
+        printf("Niepoprawny wybór!\n");
+
+    return 0;
+}
+*/
+
+/*ZAD 4
+
+#include <stdio.h>
+
+void wyswietlDzien(int numer) {
+    switch(numer) {
+        case 1: printf("Poniedziałek\n"); break;
+        case 2: printf("Wtorek\n"); break;
+        case 3: printf("Środa\n"); break;
+        case 4: printf("Czwartek\n"); break;
+        case 5: printf("Piątek\n"); break;
+        case 6: printf("Sobota\n"); break;
+        case 7: printf("Niedziela\n"); break;
+        default: printf("Niepoprawny numer dnia!\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Podaj numer dnia tygodnia (1-7): ");
+    scanf("%d", &n);
+    wyswietlDzien(n);
+    return 0;
+}
+*/
+/* ZAD 3
+#include <stdio.h>
+
+int najwieksza(int a, int b, int c) {
+    int max = a;
+    if(b > max) max = b;
+    if(c > max) max = c;
+    return max;
+}
+
+int main() {
+    int x, y, z;
+    printf("Podaj trzy liczby całkowite: ");
+    scanf("%d %d %d", &x, &y, &z);
+    printf("Największa liczba to: %d\n", najwieksza(x, y, z));
+    return 0;
+}
+*/
     
 }
