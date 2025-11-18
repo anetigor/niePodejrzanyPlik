@@ -128,7 +128,7 @@ void sprawdzPalindrom(char *s) {
 int main() {
 
 
-/*
+/* zad 7
  char url[200];
     printf("Podaj adres URL: ");
     scanf("%s", url);
