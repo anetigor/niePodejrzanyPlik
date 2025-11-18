@@ -1,4 +1,209 @@
-sper
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+
+/*Zad 7
+void wypiszProtocol(char *url) {
+    char *pos = strstr(url, "://");
+    if (pos == NULL) {
+        printf("FUNKCJA: Brak protokolu.\n");
+        return;
+    }
+
+    int len = pos - url;
+    char protokol[50];
+    strncpy(protokol, url, len);
+    protokol[len] = 0;
+
+    printf("FUNKCJA: Protokol to: %s\n", protokol);
+*/
+/*Zad 6
+void zamienWszystkie(char *tekst, const char *wzorzec, const char *nowy) {
+    char wynik[1000] = "";
+    char *pos;
+    
+    printf("Szukam wzorca \"%s\" i zastepuje \"%s\"...\n", wzorzec, nowy);
+int ilosc = 0;
+    while ((pos = strstr(tekst, wzorzec)) != NULL) {
+        ilosc++;
+        strncat(wynik, tekst, pos - tekst);
+        strcat(wynik, nowy);
+        tekst = pos + strlen(wzorzec);
+    }
+printf(" Zamienioniona tekst %d razy\n", ilosc);
+    strcat(wynik, tekst);
+    strcpy((char*)tekst, wynik);
+
+    printf("Nowy tekst: %s\n", tekst);
+}
+
+
+*/
+
+
+/*Zad 5
+void odwrocWyrazy(char *zdanie) {
+    char *wyrazy[100];
+    int licznik = 0;
+
+    char *token = strtok(zdanie, " ");
+    while (token != NULL) {
+        wyrazy[licznik++] = token;
+        token = strtok(NULL, " ");
+    }
+
+    printf("FUNKCJA – odwrocone wyrazy:\n");
+    for (int i = licznik - 1; i >= 0; i--) {
+        printf("%s", wyrazy[i]);
+        if (i > 0) printf(" ");
+    }
+    printf("\n");
+}
+*/
+/* Zad 4
+void kropkuj(char *s) {
+    printf("kropkowanie\n");
+    for (int i = 0; s[i]; i++)
+        if (s[i] == ',') s[i] = '.';
+}
+
+void przecinkuj(char *s) {
+    printf("przecinkowanie...\n");
+    for (int i = 0; s[i]; i++)
+        if (s[i] == '.') s[i] = ',';
+}
+*/
+
+/*Zad3
+void sortuj(char *s) {
+    int n = strlen(s);
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (s[i] > s[j]) {
+                char temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+}
+
+void sprawdzAnagram(char *a, char *b) {
+    if (strlen(a) != strlen(b)) {
+        printf("Nie ma anagramow, ale tez jest super :)");
+        return;
+    }
+
+    char s1[100], s2[100];
+    strcpy(s1, a);
+    strcpy(s2, b);
+
+    for (int i = 0; s1[i]; i++) s1[i] = tolower(s1[i]);
+    for (int i = 0; s2[i]; i++) s2[i] = tolower(s2[i]);
+
+    sortuj(s1);
+    sortuj(s2);
+
+    if (strcmp(s1, s2) == 0)
+        printf("WOW \"%s\" i \"%s\" sa anagramami!\n", a, b);
+    else
+        printf("Nie ma anagramow, ale tez jest super :)", a, b);
+}
+
+*/
+/* zad 2
+void sprawdzPalindrom(char *s) {
+    int i = 0, j = strlen(s) - 1;
+
+    while (i < j) {
+        if (tolower(s[i]) != tolower(s[j])) {
+            printf("niestety \"%s\" nie jest palindromem, szukamy dalej.\n", s);
+            return;
+        }
+        i++;
+        j--;
+    }
+    printf("Nie do wiary! \"%s\" jest palindromem.\n", s);
+}
+*/
+int main() {
+
+
+/*
+ char url[200];
+    printf("Podaj adres URL: ");
+    scanf("%s", url);
+
+    printf("URL: %s\n", url);
+    wypiszProtocol(url);
+*/
+
+/* Zad 6
+ char tekst[500], wzorzec[100], nowy[100];
+
+    printf("Podaj tekst:\n");
+    fgets(tekst, 500, stdin);
+    tekst[strcspn(tekst, "\n")] = 0;
+
+    printf("Podaj wzorzec: ");
+    scanf("%s", wzorzec);
+
+    printf("Podaj ciag wstawiany: ");
+    scanf("%s", nowy);
+
+    zamienWszystkie(tekst, wzorzec, nowy);
+*/
+
+
+/*zad 5
+ char zdanie[200];
+    printf("Podaj zdanie:\n");
+    fgets(zdanie, 200, stdin);
+
+    zdanie[strcspn(zdanie, "\n")] = 0;
+
+    odwrocWyrazy(zdanie);
+
+
+*/
+/*zad 4
+  char liczbaStr[50];
+    printf("Podaj liczbe rzeczywista (idealnie z przecinkiem): ");
+    scanf("%s", liczbaStr);
+
+    kropkuj(liczbaStr);
+    double x = atof(liczbaStr);
+
+    printf("Zamieniona liczba = %f\n", x);
+
+    x += 0.001;
+
+    sprintf(liczbaStr, "%.10f", x);
+    przecinkuj(liczbaStr);
+
+    printf("Wynik: %s\n", liczbaStr);
+*/
+
+/*Zad 3
+  char s1[100], s2[100];
+    printf("Podaj pierwsze slowo: ");
+    scanf("%s", s1);
+    printf("Podaj drugie slowo: ");
+    scanf("%s", s2);
+
+    sprawdzAnagram(s1, s2);
+*/
+/*Zad 2
+    char slowo[100];
+    printf("Podaj slowo: ");
+    scanf("%s", slowo);
+
+    sprawdzPalindrom(slowo);
+*/
+
+
+
+    return 0;
+}
 
 
 
