@@ -1,0 +1,327 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+/*zad9
+#define N 10
+#define LEN 50
+
+void odczyt(char t[N][LEN]) {
+    for (int i = 0; i < N; i++) {
+        printf("Podaj wyraz %d: ", i+1);
+        scanf("%s", t[i]);
+    }
+}
+
+void wypisz(char t[N][LEN]) {
+    printf("\nWyrazy:\n");
+    for (int i = 0; i < N; i++)
+        printf("%s\n", t[i]);
+}
+
+char* najdluz(char t[N][LEN]) {
+    int max = 0;
+    for (int i = 1; i < N; i++)
+        if (strlen(t[i]) > strlen(t[max]))
+            max = i;
+    return t[max];
+}
+
+*/
+/*Zad 8
+#define N 5
+
+void wypelnij(int m[N][N]) {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = rand() % 16;
+}
+
+void wypisz(int m[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void antyOdwrucu(int m[N][N]) {
+    for (int i = 0; i < N/2; i++) {
+        int tmp = m[i][N-1-i];
+        m[i][N-1-i] = m[N-1-i][i];
+        m[N-1-i][i] = tmp;
+    }
+}
+*/
+/*zad 7
+#define N 5
+
+void wypelnij(int m[N][N]) {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = rand() % 16;
+}
+
+void wypisz(int m[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void odwrucu(int m[N][N]) {
+    for (int i = 0; i < N/2; i++) {
+        int tmp = m[i][i];
+        m[i][i] = m[N-1-i][N-1-i];
+        m[N-1-i][N-1-i] = tmp;
+    }
+}
+*/
+
+/* zad 6
+#define N 5
+
+void wypelnij(int m[N][N]) {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = rand() % 20 + 6;
+}
+
+void print(int m[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+int roznic(int m[N][N]) {
+    int d1 = 0, d2 = 0;
+    for (int i = 0; i < N; i++) {
+        d1 += m[i][i];
+        d2 += m[i][N - 1 - i];
+    }
+    return d1 - d2;
+}
+
+*/
+/*zad 5
+
+#define N 4
+
+void wypelnij(int m[N][N]) {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = rand() % 41 - 20;
+}
+
+void wypisz(int m[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%4d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void sumka(int m[N][N]) {
+    printf("\nSumy wierszy:\n");
+    for (int i = 0; i < N; i++) {
+        int s = 0;
+        for (int j = 0; j < N; j++)
+            s += m[i][j];
+        printf("Wiersz %d: %d\n", i, s);
+    }
+
+    printf("\nSumy kolumn:\n");
+    for (int j = 0; j < N; j++) {
+        int s = 0;
+        for (int i = 0; i < N; i++)
+            s += m[i][j];
+        printf("Kolumna %d: %d\n", j, s);
+    }
+}
+*/
+/*Zad 4
+
+#define N 4
+
+void wypelnijja(int m[N][N]) {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = rand() % 21 - 10;
+}
+
+void wypiszja(int m[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void sortusortu(int m[N][N]) {
+    int temp[16];
+    int k = 0;
+
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            temp[k++] = m[i][j];
+
+    for (int i = 0; i < 16; i++)
+        for (int j = i + 1; j < 16; j++)
+            if (temp[j] < temp[i]) {
+                int t = temp[i]; temp[i] = temp[j]; temp[j] = t;
+            }
+
+    k = 0;
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            m[i][j] = temp[k++];
+}
+*/
+
+/*Zad 3
+#define R 3
+#define C 4
+
+void wypelnij(int m[R][C]) {
+    for (int i = 0; i < R; i++)
+        for (int j = 0; j < C; j++)
+            m[i][j] = rand() % 11 - 5;
+}
+
+void wypisz(int m[R][C]) {
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++)
+            printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void wyszuk(int m[R][C], int *min, int *max) {
+    *min = *max = m[0][0];
+    for (int i = 0; i < R; i++)
+        for (int j = 0; j < C; j++) {
+            if (m[i][j] < *min) *min = m[i][j];
+            if (m[i][j] > *max) *max = m[i][j];
+        }
+}
+*/
+/* zad 2
+#define ROW 4
+#define COL 3
+
+void wypelnijJa(double m[ROW][COL]) {
+    for (int i = 0; i < ROW; i++)
+        for (int j = 0; j < COL; j++)
+            m[i][j] = (rand() % 2201 - 1100) / 100.0;  // zakres [-11, 11)
+}
+
+void wypiszJa(double m[ROW][COL]) {
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COL; j++)
+            printf("%7.2lf ", m[i][j]);
+        printf("\n");
+    }
+}
+
+void Skalar(double m[ROW][COL], double s) {
+    for (int i = 0; i < ROW; i++)
+        for (int j = 0; j < COL; j++)
+            m[i][j] *= s;
+}
+*/
+int main() {
+
+/*zad 9
+   char tab[N][LEN];
+
+    readWords(tab);
+    printWords(tab);
+
+    printf("\nNajdluzszy wyraz: %s\n", longestWord(tab));
+*/
+/*zad 8
+ srand(time(NULL));
+    int M[N][N];
+
+    wypelnij(M);
+    printf("Przed:\n");
+    wypisz(M);
+
+    antyOdwrucu(M);
+    printf("\nPo odwróceniu przeciwprzekątnej:\n");
+    wypisz(M);
+*/
+
+/* zad 7
+ srand(time(NULL));
+    int M[N][N];
+
+    wypelnij(M);
+    printf("Przed:\n");
+    wypisz(M);
+
+    odwrucu(M);
+    printf("\nPo odwróceniu przekątnej:\n");
+    wypisz(M);
+*/
+/*zad 6
+srand(time(NULL));
+    int M[N][N];
+
+    wypelnij(M);
+    print(M);
+
+    printf("Różnica przekatnych = %d\n", roznic(M));
+*/
+
+/*zad 5
+ srand(time(NULL));
+    int M[N][N];
+
+    wypelnij(M);
+    wypisz(M);
+    sumka(M);
+*/
+/*zad 4
+ srand(time(NULL));
+    int M[N][N];
+
+    wypelnijja(M);
+    printf("Przed sortowaniem:\n");
+    wypiszja(M);
+
+    sortusortu(M);
+    printf("\nPo sortowaniu:\n");
+    wypiszja(M);
+*/
+/*zad 3
+  srand(time(NULL));
+    int M[R][C], min, max;
+
+    wypelnij(M);
+    wypisz(M);
+    wyszuk(M, &min, &max);
+
+    printf("MIN = %d, MAX = %d\n", min, max);
+*/
+/*zad 2
+    srand(time(NULL));
+    double M[ROW][COL];
+    double skalar;
+    
+    wypelnijJa(M);
+    printf("Macierz przed mnozeniem:\n");
+    wypiszJa(M);
+
+    printf("Podaj skalar: ");
+    scanf("%lf", &skalar);
+
+    Skalar(M, skalar);
+    printf("\nMacierz po mnozeniu:\n");
+    wypiszJa(M);
+*/
+}
