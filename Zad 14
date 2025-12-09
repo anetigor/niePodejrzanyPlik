@@ -16,11 +16,92 @@ double odleglosc(Punkt a, Punkt b) {
 }
 */
 
+/* zad 6
+struct osoba{
+    char imie[15];
+    char nazwisko[25];
+};
+
+void sortuj(struct osoba tab[], int n)
+{
+    int i,j;
+    struct osoba temp;
+
+    for(i=0;i<n-1;i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+            if(strcmp(tab[j].nazwisko, tab[j+1].nazwisko) > 0 ||
+              (strcmp(tab[j].nazwisko, tab[j+1].nazwisko) == 0 &&
+               strcmp(tab[j].imie, tab[j+1].imie) > 0))
+            {
+                temp = tab[j];
+                tab[j] = tab[j+1];
+                tab[j+1] = temp;
+            }
+        }
+    }
+}
+
+*/
+
+/*zad 5
+enum typ {KART, BIEG};
+
+struct punkt {
+    enum typ t;
+    double a, b; 
+};
+
+*/
 
 
 
+/*zad 4
+struct zespolona{
+    double re;
+    double im;
+};
 
+struct zespolona dodaj(struct zespolona a, struct zespolona b)
+{
+    struct zespolona wynik;
+    wynik.re = a.re + b.re;
+    wynik.im = a.im + b.im;
+    return wynik;
+}
 
+struct zespolona odejmij(struct zespolona a, struct zespolona b)
+{
+    struct zespolona wynik;
+    wynik.re = a.re - b.re;
+    wynik.im = a.im - b.im;
+    return wynik;
+}
+
+struct zespolona mnoz(struct zespolona a, struct zespolona b)
+{
+    struct zespolona wynik;
+    wynik.re = a.re*b.re - a.im*b.im;
+    wynik.im = a.re*b.im + a.im*b.re;
+    return wynik;
+}
+
+struct zespolona dziel(struct zespolona a, struct zespolona b)
+{
+    struct zespolona wynik;
+    double m = b.re*b.re + b.im*b.im;
+    wynik.re = (a.re*b.re + a.im*b.im) / m;
+    wynik.im = (a.im*b.re - a.re*b.im) / m;
+    return wynik;
+}
+
+void wypisz(struct zespolona z)
+{
+    printf("%.2lf + %.2lfi\n", z.re, z.im);
+}
+
+*/
 
 
 
@@ -59,6 +140,10 @@ void pokazRozmiaryStruktury() {
 
 }
 */
+
+-----------------------------------------------------------------------------------------------------
+
+
 int main() {
 
 /* Zad 2
@@ -70,16 +155,52 @@ int main() {
 */
 
 
-/*
 
+
+/*zad 4
+ struct zespolona x, y;
+
+    printf("Podaj pierwsza liczbe (re im): ");
+    scanf("%lf %lf", &x.re, &x.im);
+
+    printf("Podaj druga liczbe (re im): ");
+    scanf("%lf %lf", &y.re, &y.im);
+
+    printf("\nWyniki:\n");
+    wypisz(dodaj(x, y));
+    wypisz(odejmij(x, y));
+    wypisz(mnoz(x, y));
+    wypisz(dziel(x, y));
 */
 
-/*
+/*zad 5
+   struct punkt p;
 
+    printf("Podaj wspolrzedne kartezjanskie (x y): ");
+    scanf("%lf %lf", &p.a, &p.b);
+    p.t = KART;
+
+    if(p.t == KART) {
+        double r = sqrt(p.a*p.a + p.b*p.b);
+        double fi = atan2(p.b, p.a);
+        printf("Biegunowo: r=%.2lf, fi=%.2lf rad\n", r, fi);
+    }
 */
 
-/*
+/*zad 6
+ struct osoba osoby[5] = {
+        {"Jan","Kowalski"},
+        {"Adam","Nowak"},
+        {"Piotr","Zielinski"},
+        {"Adam","Kowalski"},
+        {"Zofia","Nowak"}
+    };
 
+    sortuj(osoby, 5);
+
+    printf("Posortowana lista:\n");
+    for(int i=0;i<5;i++)
+        printf("%s %s\n", osoby[i].imie, osoby[i].nazwisko);
 */
 
 /* Zad 7
