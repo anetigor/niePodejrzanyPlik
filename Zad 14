@@ -1,1 +1,86 @@
 
+#include <stdio.h>
+
+
+/* Zad 3
+union TestUnion {
+    char a;
+    int b;
+    double c;
+};
+
+void pokazRozmiaryUnii() {
+    union TestUnion u;
+
+    int sumaPol = sizeof(u.a) + sizeof(u.b) + sizeof(u.c);
+
+    printf("Rozmiar calej unii: %zu bajtow\n", sizeof(u));
+    printf("Suma rozmiarow wszystkich pol: %d bajtow\n", sumaPol);
+
+}
+*/
+/* Zad 2
+struct Test {
+    char a;
+    int b;
+    double c;
+};
+
+void pokazRozmiaryStruktury() {
+    struct Test t;
+
+    int sumaPol = sizeof(t.a) + sizeof(t.b) + sizeof(t.c);
+
+    printf("Rozmiar calej struktury: %zu bajtow\n", sizeof(t));
+    printf("Suma rozmiarow pol: %d bajtow\n", sumaPol);
+
+}
+*/
+int main() {
+
+/* Zad 2
+    pokazRozmiaryStruktury();
+*/
+
+/* Zad 3
+ pokazRozmiaryUnii();
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
