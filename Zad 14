@@ -1,5 +1,28 @@
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+/*Zad 7
+#define N 10
+
+typedef struct {
+    int x, y;
+} Punkt;
+
+double odleglosc(Punkt a, Punkt b) {
+    return sqrt((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
+}
+*/
+
+
+
+
+
+
+
+
 
 
 /* Zad 3
@@ -46,9 +69,6 @@ int main() {
  pokazRozmiaryUnii();
 */
 
-/*
-
-*/
 
 /*
 
@@ -62,24 +82,34 @@ int main() {
 
 */
 
+/* Zad 7
+Punkt tab[N];
+    srand(time(NULL));
 
+    printf("Wygenerowane punkty:\n");
+    for(int i=0; i<N; i++) {
+        tab[i].x = rand()%21 - 10;
+        tab[i].y = rand()%21 - 10;
+        printf("(%d, %d)\n", tab[i].x, tab[i].y);
+    }
 
+    double max = 0;
+    Punkt p1, p2;
 
+    for(int i=0; i<N; i++) {
+        for(int j=i+1; j<N; j++) {
+            double d = odleglosc(tab[i], tab[j]);
+            if(d > max) {
+                max = d;
+                p1 = tab[i];
+                p2 = tab[j];
+            }
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    printf("\nNajwieksza odleglosc: %.2f\n", max);
+    printf("Miedzy punktami (%d,%d) i (%d,%d)\n", p1.x, p1.y, p2.x, p2.y);
+*/
 
 
     return 0;
